@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mixology: Rocks Glass</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"  href="css/stylesquizbasic.css">
+<link rel="stylesheet"  href="css/styles-web-projects-universal.css">
+</head>
+
+<body>
+
+<div id="back-to-portfolio">
+<a href="http://www.jacobsireviray.com/projectswebdev.html">Back to Portfolio</a>
+<div id="icon-web"></div>
+</div>
+
+<div id="ingredients-area">
+<div class="ingredient-option-holder" id="base-option-holder">
+<h3>Choose Base Spirit</h3>
+<ul>
+<li><button class="base-option-group" id="vodka-option">Vodka</button></li>
+<li><button class="base-option-group" id="gin-option">Gin</button></li>
+<li><button class="base-option-group" id="rum-option">Rum</button></li>
+<li><button class="base-option-group" id="tequila-option">Tequila</button></li>
+<li><button class="base-option-group" id="whiskey-option">Whiskey</button></li>
+</ul>
+</div>
+<div class="ingredient-option-holder" id="secondary-option-holder">
+<h3>Choose Secondary</h3>
+<ul>
+<li><button class="secondary-option-group" id="ginger-option">Ginger Ale</button></li>
+<li><button class="secondary-option-group" id="cranberry-option">Cranberry Juice</button></li>
+<li><button class="secondary-option-group" id="coke-option">Cola Soda</button></li>
+<li><button class="secondary-option-group" id="orange-option">Orange Juice</button></li>
+<li><button class="secondary-option-group" id="tonic-option">Water Tonic</button></li>
+</ul>
+</div>
+<div class="ingredient-option-holder" id="finisher-option-holder">
+<h3>Choose Finisher</h3>
+<ul>
+<li><button class="finisher-option-group" id="lemon-option">Lemon Wedge</button></li>
+<li><button class="finisher-option-group" id="lime-option">Lime Wedge</button></li>
+<li><button class="finisher-option-group" id="grenadine-option">Grenadine Syrup</button></li>
+<li><button class="finisher-option-group" id="bitters-option">Orange Bitters</button></li>
+</ul>
+</div>
+
+<div id="end-option-holder">
+<button id="results-option">Evaluate Results</button>
+</div>
+<div id="results-holder">
+<img src="assets/images/brella.svg" alt="Agent Brella" id="results-brella">
+</div>
+<a href="rocks-glass.html" id="reset-option">Try Again?</a>
+</div>
+
+
+
+<div id="work-area">
+
+<div id="glass-layer">
+</div>
+
+<div class="drink-layer" id="finisher-layer">
+<div id="garnish-splash"></div>
+<div id="garnish-wedge"></div>
+</div>
+
+<div class="drink-layer" id="secondary-layer">
+<div id="secondary-layer-fill">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+<path id="secondary-layer-wavey" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
+	c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
+	c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"/>
+</svg>
+</div>
+</div>
+
+<div class="drink-layer" id="base-layer">
+<div id="base-layer-fill">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+<path id="base-layer-wavey" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4
+	c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9
+	c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"/>
+</svg>
+</div>
+</div>
+
+<div id="info-layer">
+<p id="info-finisher"></p>
+<p id="info-secondary"></p>
+<p id="info-base"></p>
+</div>
+
+</div>
+
+<script src="js/quiz-basic.js"></script>
+</body>
+</html>

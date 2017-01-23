@@ -1,0 +1,393 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Ravi+Prakash');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: steelblue;
+	font-family: 'Ravi Prakash', Gotham, sans-serif;
+	overflow: hidden;
+	min-width: 860px;
+	min-height: 860px;
+}
+
+button, a {
+	font-family: 'Ravi Prakash', Gotham, sans-serif;
+	font-size: 1.2rem;
+}
+
+button {
+	background: none;
+	border: none;
+}
+
+button:hover, button:focus, a:hover {
+	opacity: 0.75;
+	outline: none;
+	cursor: pointer;
+}
+
+button:hover {
+	border-bottom: 1px solid white;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+h3 {
+	font-size: 1.6rem;	
+}
+
+ul {
+	list-style-type: none;
+}
+
+
+
+
+
+
+
+#ingredients-area {
+	border-right: 15px solid white;
+	width: 30vw;
+	min-width: 150px;
+	max-width: 300px;
+	height: 100vh;
+	float: left;
+	background: lightsteelblue;
+	overflow-y: auto;
+}
+
+.ingredient-option-holder, #end-option-holder, #results-holder {
+	padding-left: 10px;
+}
+
+#secondary-option-holder {
+	display: none;
+}
+
+#finisher-option-holder {
+	display: none;
+}
+
+#end-option-holder {
+	padding-top: 10px;
+}
+
+#results-option, #reset-option {
+	font-size: 2rem;
+	display: block;
+}
+
+#reset-option {
+	text-align: center;
+	display: none;
+}
+
+#results-option {
+	border-top: 5px solid black;
+}
+
+#results-holder p {
+	font-family: 'Raleway', Gotham, sans-serif;
+	padding: 10px 20px 10px 5px;
+	line-height: 1.3rem;
+}
+
+#results-brella {
+	padding-top: 30px;
+	display: none;
+	width: 100%;
+	max-width: 220px;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#work-area {
+	width: 70vw;
+	height: 100vh;
+	min-width: 600px;
+	background: steelblue;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#glass-layer {
+	z-index: 4;
+	opacity: 0.75;
+	width: 320px;
+	background: url(../assets/images/glassware-rocks.svg);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-bottom: 500px;
+	margin-bottom: -500px;
+}
+
+#base-layer, #secondary-layer {
+	width: 150px;
+	overflow: hidden;
+	backface-visibility: hidden;
+	transform: translate3d(0, 0, 0) scaleX(2);
+}
+
+#info-layer {
+	padding-top: 20px;
+	width: 150px;
+	height: 100px;
+}
+
+#info-layer p {
+	text-align: center;
+	font-size: 1.4rem;
+}
+
+#base-layer {
+	z-index: 3;
+	margin-top: -20px;
+	height: 120px;
+	border-bottom-left-radius: 30%;
+	border-bottom-right-radius: 30%;
+}
+
+#secondary-layer {
+	opacity: 0.75;
+	z-index: 2;
+	padding-top: 50px;
+	height: 260px;
+	border-top-left-radius: 3%;
+	border-top-right-radius: 3%;
+}
+
+#finisher-layer {
+	z-index: 1;
+	height: 50px;
+	width: 300px;
+}
+
+#garnish-splash, #garnish-wedge {
+	position: relative;
+	opacity: 0;
+}
+
+#garnish-splash {
+	left: 150px;
+    width: 50px;
+    height: 50px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 75px;
+    border-bottom-right-radius: 75px;
+    border-bottom-left-radius: 75px;
+    transform: rotate(45deg);
+}
+
+#garnish-wedge {
+	top: -80px;
+	right: -110px;
+	width: 200px;
+	height: 200px;
+	float: right;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#end-option-holder {
+	display: none;
+}
+
+#base-layer-wavey, #secondary-layer-wavey {
+	opacity: 0;
+}
+
+.fill-anim, .fill-anim-long {
+	animation-iteration-count: 1;
+	animation-timing-function: cubic-bezier(.2, .6, .8, .4);
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+.fill-anim {
+	animation-name: verticalFill;
+}
+
+.fill-anim-long {
+	animation-name: verticalFillLong;
+}
+
+.wavey-anim {
+	animation-name: waveyFill;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	animation-duration: 2s;
+}
+
+.splash-anim {
+	animation-name: garnishSplash;
+	animation-iteration-count: 2;
+	animation-timing-function: cubic-bezier(.4, .9, .9, .9);
+	animation-duration: 0.25s;
+}
+
+.wedge-anim {
+	animation-name: garnishWedge;
+	animation-iteration-count: 1;
+	animation-timing-function: cubic-bezier(.4, .9, .9, .9);
+	animation-duration: 0.25s;
+}
+
+.nextCategory-anim, .nextCategoryShort-anim {
+	animation-iteration-count: 1;
+	animation-timing-function: cubic-bezier(.4, .9, .9, .9);
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+.nextCategory-anim {
+	animation-name: showNextCategory;
+}
+
+.nextCategoryShort-anim {
+	animation-name: showNextCategoryShort;
+}
+
+@keyframes verticalFill {
+0% {
+	transform: translate(0, 150px);
+}
+	
+100% {
+	transform: translate(0, 0px);
+}
+}
+
+@keyframes verticalFillLong {
+0% {
+	transform: translate(0, 300px);
+}
+	
+100% {
+	transform: translate(0, -5px);
+}
+}
+
+@keyframes waveyFill {
+0% {
+	transform: translate(-150px, 0);
+}
+	
+100% {
+	transform: translate(0, 0);
+}
+}
+
+@keyframes garnishSplash {
+0% {
+	top: -150px;
+	opacity: 1;
+}
+	
+100% {
+	top: 0px;
+	opacity: 0;
+}
+}
+
+@keyframes garnishWedge {
+0% {
+	top: -150px;
+	opacity: 0;
+}
+	
+100% {
+	top: -80px;
+	opacity: 1;
+}
+}
+
+@keyframes showNextCategory {
+0% {
+	opacity: 0;
+	height: 0;
+}
+100% {
+	opacity: 1;
+	height: 210px;
+}
+}
+
+@keyframes showNextCategoryShort {
+0% {
+	opacity: 0;
+	height: 0;
+}
+100% {
+	opacity: 1;
+	height: 161px;
+}
+}
+
+
+
+
+
+@media all and (max-width: 600px) {
+body {
+	overflow-y: auto;
+	min-width: 320px;
+}
+
+button, a, #info-layer p {
+	font-size: 1rem;
+}
+
+h3 {
+	font-size: 1.2rem;	
+}
+
+#ingredients-area {
+	border-right: none;
+	border-bottom: 15px solid white; 
+	width: 100vw;
+	max-width: none;
+	height: auto;
+}
+
+#work-area {
+	overflow: hidden;
+	width: 100vw;
+	height: auto;
+	min-width: 320px;
+}
+
+#info-layer {
+	padding-top: 18px;
+}
+
+.nextCategory-anim {
+	animation-name: showNextCategoryShort;
+}
+
+}
